@@ -10,5 +10,13 @@
             {% else %} Not yet :)
             {% endif %}
         </time>
+        {% if user.is_authenticated %}
+            <aside class="actions">
+                <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
+                    {% include './icons/pencil-fill.svg' %}
+                </a>
+            </aside>
+        {% endif %}
     </article>
+    
 {% endblock %}
